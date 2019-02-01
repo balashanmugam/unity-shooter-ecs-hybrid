@@ -3,4 +3,5 @@
 public class EnemyMovementSpeedComponent : MonoBehaviour
 {
     public float Value;
+    
 }

@@ -14,7 +14,7 @@ namespace ECS.Hybrid.Systems{
             foreach (var entity in GetEntities<Filter>())
             {
                 var pos = entity.Rigidbody.position;
-                var newZPos = entity.Rigidbody.position.z + entity.EnemyMovementSpeedComponent.Value * Time.fixedDeltaTime;
+                var newZPos =  entity.Rigidbody.position.z + -1 * entity.EnemyMovementSpeedComponent.Value * Time.fixedDeltaTime;
                 entity.Rigidbody.MovePosition(new Vector3(pos.x, pos.y, newZPos));
             }
         }
