@@ -5,25 +5,17 @@ using UnityEngine;
 namespace ECS.Hybrid.Systems{
     public class CollisionSystem : ComponentSystem
     {
-        private struct Filter{
+
+        public struct Filter{
             public CollisionData CollisionData;
         }
         protected override void OnUpdate()
         {
-            foreach (var entity in GetEntities<Filter>())
-            {
-                var sourceObject = entity.CollisionData.source;
-                var collidedObject = entity.CollisionData.other;
-                // Receiving already collided data.
-                if(collidedObject.tag == "Enemy"){
-                    Debug.Log("Enemy Collision!");
-                    Object.Destroy(sourceObject,0.0f);
-                    Object.Destroy(collidedObject,0.1f);
-
-                }
-            } 
+            foreach(var entity in GetEntities<Filter>()){
+                //Destroy both game objects
+                Object.Destroy(entity.CollisionData.source);
+                Object.Destroy(entity.CollisionData.other);
+            }
         }
-
-
     }
 }
