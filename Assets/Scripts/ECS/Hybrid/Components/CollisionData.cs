@@ -5,4 +5,4 @@ public class CollisionData : MonoBehaviour
     {
         public GameObject source;
         public GameObject other;
-    }
+    } 
