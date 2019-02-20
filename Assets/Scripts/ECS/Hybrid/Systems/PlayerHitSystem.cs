@@ -32,8 +32,6 @@ namespace ECS.Hybrid.Systems
                 {
                     //Freeze gameplay
                     Time.timeScale = 0;
-                    // End game #endregion
-                    // Display endscreen.
                 }
             }
             //throw new System.NotImplementedException();
